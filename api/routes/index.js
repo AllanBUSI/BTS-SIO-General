@@ -11,9 +11,10 @@ const postControllerResetPassword = require('../controllers/post.controllers.res
 const putController = require('../controllers/put.controllers')
 const deleteController = require('../controllers/delete.controllers')
 const getMiddleware = require('../middleware/get.middleware')
+const getMiddlewareReviews = require('../middleware/get.middleware.reviews')
 
 router.get('/',getMiddleware, getController)
-router.get('/avis', getControllerAvis)
+router.get('/avis', getMiddlewareReviews, getControllerAvis)
 router.get('/avis/:id', getControllerAvisId)
 router.post('/add/avis', postController)
 router.put('/autoriser/avis/:id', putController)

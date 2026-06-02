@@ -1,5 +1,5 @@
-
+const json = require('../moks/reviews.json')
 
 module.exports = (req, res) => {
-  res.send('/avis/:id')
+  return res.json(json.reviews)
 }
